@@ -23,7 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'ggesrv4!k406oc*vgayi+5#7ww%=_oz_8+)x_^4=rb-glyu$4&'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = []
 
@@ -76,23 +76,19 @@ WSGI_APPLICATION = 'hello_world.wsgi.application'
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
 DATABASES = {
-    # 'default': {
-    #     'ENGINE': 'django.db.backends.sqlite3',
-    #     'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    # }
     'default': {
 
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
 
-        'NAME': 'mirkwood',
+        'NAME': 'DATABASE_NAME',
 
-        'USER': 'app_service',
+        'USER': 'DB_USER_NAME',
 
-        'PASSWORD': 'Austria2019.',
+        'PASSWORD': 'DB_PASSWORD',
 
-        'HOST': 'localhost',
+        'HOST': 'DB_HOST',
 
-        'PORT': '5432',
+        'PORT': 'DB_PORT',
 
     }
 }
@@ -135,3 +131,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
+
+...
+
+from .local_settings import *

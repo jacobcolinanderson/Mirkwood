@@ -4,3 +4,7 @@
 .elasticbeanstalk/
 
 .ebextensions/
+
+hello_world/local_settings.py
+
+hello_world/__pycache__/
